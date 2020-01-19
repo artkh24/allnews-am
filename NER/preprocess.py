@@ -27,13 +27,12 @@ def writeInfile(data, filename):
             f.write('\n')
 
 if __name__ == '__main__':
-    traindevgetter=sentence.Sentence('pioner-silver/train.conll03')
-    testgetter = sentence.Sentence('pioner-silver/dev.conll03')
+    traingetter=sentence.Sentence('pioner-silver/train.conll03')
+    devgetter = sentence.Sentence('pioner-silver/dev.conll03')
+    testgetter=sentence.Sentence('pioner-silver/test.conll03')
 
-    train,dev=partitionRankings(traindevgetter.tagged_sentences, 0.1)
-
-    writeInfile(list(train),'data/train.txt')
-    writeInfile(list(dev), 'data/dev.txt')
-    writeInfile(list(testgetter.tagged_sentences), 'data/test.txt')
+    writeInfile(list(traingetter.tagged_sentences),'BERT/data/train.txt')
+    writeInfile(list(devgetter.tagged_sentences), 'BERT/data/dev.txt')
+    writeInfile(list(testgetter.tagged_sentences), 'BERT/data/test.txt')
 
 
