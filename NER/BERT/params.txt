@@ -20,7 +20,7 @@ armenian-model
 --max_seq_length
 256
 --num_train_epochs
-4
+2
 --per_gpu_train_batch_size
 16
 --save_steps
